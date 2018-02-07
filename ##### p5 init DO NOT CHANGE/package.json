@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "browser-sync": "^2.13.0",
+    "gulp": "^3.9.1"
+  },
+  "devDependencies": {
+    "eslint": "^4.16.0",
+    "eslint-config-p5js": "^1.0.1"
+  }
+}
