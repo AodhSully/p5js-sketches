@@ -9,7 +9,7 @@ function setup() {
 function draw() {
   background(51);
   drawCircle(width/2,height/2,500);
-  //noLoop();
+  noLoop();
 }
 
 function drawCircle(x,y,r) {
@@ -24,7 +24,7 @@ function drawCircle(x,y,r) {
     // if(r > 1) {
     //   r *= 0.75;
     // drawCircle(x, y, r);
-    // }
+    }
   }
 }
 
