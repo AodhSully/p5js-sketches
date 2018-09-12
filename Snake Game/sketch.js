@@ -34,12 +34,18 @@ function keyPressed() {
 function draw() {
   scale(resolution);
   background(51);
-  snake.update();
-  snake.show();
   if (snake.eat(food)){
     foodLocation();
   }
+  snake.update();
+  snake.show();
 
+  if (snake.endGame()) {
+    // let message = "Game Over";
+    background(255, 0, 0);
+    // fill(0);
+    // text(message, 50, 50);
+  }
   noStroke();
   fill(0, 255, 0);
   rect(food.x, food.y, 1, 1);
