@@ -5,7 +5,6 @@ var cLat = 0;
 var cLong = 0;
 var lat = 0;
 var long = 0;
-
 var zoom = 1;
 // dublin 53.3498° N, 6.2603° W
 // var lat = 53.3498;
@@ -41,31 +40,35 @@ function setup() {
   var cy = mercY(cLat);
 
   for (var i = 0; i < earthquakes.length; i++) {
-    var data = earthquakes[i].split(/,/);
-    //console.log(data);
-    var lat = data[1];
-    var long = data[2];
-    var mag = data[4]
 
-    var x = mercX(long) - cx;
-    var y = mercY(lat) - cy;
+    (function(i) {
+      setTimeout(function() {
 
-    mag = pow(10, mag );
-    mag = sqrt(mag);
+        var data = earthquakes[i].split(/,/);
+        //console.log(data);
+        var lat = data[1];
+        var long = data[2];
+        var mag = data[4]
 
-    var magMax = sqrt(pow(10, 10));
-    var d = map(mag, 0, magMax, 2, 500);
-    fill(255,0,255, 200);
-    noStroke();
-    ellipse(x, y, d, d)
+        var x = mercX(long) - cx;
+        var y = mercY(lat) - cy;
+
+        mag = pow(10, mag);
+        mag = sqrt(mag);
+
+        var magMax = sqrt(pow(10, 10));
+        var d = map(mag, 0, magMax, 2, 500);
+
+        fill(255, 0, 255, 100);
+        noStroke();
+        ellipse(x, y, d, d)
+
+        document.getElementById("current").innerHTML = i+1;
+
+      }, 1 * i);
+    })(i);
   }
 
-
-}
-
-
-
-
-function draw() {
+  document.getElementById("total").innerHTML = earthquakes.length;
 
 }
