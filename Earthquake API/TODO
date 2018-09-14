@@ -1,9 +1,15 @@
-show earthquakes over mag 2... 5... 7...etc
-slider for speed map is populated
+implement - slider for speed at which map is populated
 show earthquakes in last 10... 5... 2.. etc days
+show earthquakes over mag 2... 5... 7...etc
+
 
 
 /*********DONE*************/
+add reset animation button
+move script above table
+color table
+add css
 animate earthquakes
 display total no of earthquakes n last 30 days
 no of earthquakes currently displayed
+slider for speed at which map is populated

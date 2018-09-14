@@ -1,12 +1,19 @@
+<!doctype html>
 <html>
 
 <head>
+  <meta charset="UTF-8" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.js"></script>
   <script src="sketch.js"></script>
+  <link rel="stylesheet" type="text/css" href="styles.css" />
 </head>
 
-<body>
-  <div onload="setup()">
+<body onload="setup()">
+  <div>
+    <h1>
+      <a href="https://earthquake.usgs.gov/" target="_blank">
+      Data collected from USGS</a>
+    </h1>
     <p>
       Total Earthquakes in the last month : <span id=total></span>
     </p>
@@ -14,6 +21,52 @@
       Number of Earthquakes Currently Shown : <span id=current></span>
     </p>
   </div>
+
+  <div id="sketch-holder"> </div>
+
+  <button type="button" onclick="setup()">Reset Animation</button>
+
+  <table id="tab" border="1">
+    <thead id="a">
+      <strong>
+        <th><h2>Colour</h2></th>
+        <th><h2>Type</h2></th>
+        <th><h2>Depth</h2></th>
+      </strong>
+    </thead>
+
+    <tr id="b">
+      <td>White</td>
+      <td>Explosion / Quarry Blast</td>
+      <td>N/A</td>
+    </tr>
+    <tr id="a">
+      <td>Blue</td>
+      <td>Ice Quake</td>
+      <td>N/A</td>
+    </tr>
+    <tr id="b">
+      <td>Yellow</td>
+      <td>Earthquake</td>
+      <td>Close to Surface</td>
+    </tr>
+    <tr id="a">
+      <td>Green</td>
+      <td>Earthquake</td>
+      <td>Medium Depth</td>
+    </tr>
+    <tr id="b">
+      <td>Red</td>
+      <td>Earthquake</td>
+      <td>Deep</td>
+    </tr>
+  </table>
+
+  <!-- <div class="slidecontainer">
+    <input type="range" min="0.1" max="100" value="1" class="slider" id="range">
+    <p>Slider Value: <span id="demo"></span></p>
+  </div> -->
 </body>
+
 
 </html>

@@ -1,0 +1,76 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  display: grid;
+  padding: 5px;
+  background-color: #333333;
+  line-height: 1.2;
+  -webkit-font-smoothing: antialiased;
+  color: #fff;
+  font-size: 1.6rem;
+  font-family: 'Lato', sans-serif;
+  justify-content: center;
+  /* This centers our sketch vertically. */
+  align-items: center;
+}
+
+#sketch-holder {
+  /* padding-bottom: : 20px; */
+  border-style: solid;
+  border-color: black;
+}
+
+h1 {
+  text-align: center;
+  font-weight: 500;
+}
+
+a {
+  color: #CDCDCD;
+}
+
+p {
+  text-align: center;
+  color: #CDCDCD;
+}
+
+button {
+  font-size: 1.6rem;
+  font-family: 'Lato', sans-serif;
+  padding: 5px;
+}
+
+table {
+  width: 100%;
+  background-color: white;
+}
+
+thead {
+  color: #CDCDCD;
+}
+
+th {
+  text-align: center;
+  font-weight: 700;
+}
+
+tr {
+  padding-bottom: 10px;
+}
+
+td {
+  padding: 10px;
+  text-align: center;
+  color: #CDCDCD;
+}
+
+#a {
+  background-color: #222222;
+}
+
+#b {
+  background-color: #444444;
+}
