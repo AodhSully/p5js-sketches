@@ -33,43 +33,37 @@ function setup() {
   translate(width / 2, height / 2);
   imageMode(CENTER);
   image(mapImage, 0, 0);
-
   var cx = mercX(cLong);
   var cy = mercY(cLat);
 
   for (var i = 0; i < earthquakes.length; i++) {
     (function(i) {
       setTimeout(function() {
-
         var data = earthquakes[i].split(/,/);
-        //console.log(data);
         var lat = data[1];
         var long = data[2];
         var mag = data[4];
         var depth = data[3];
         var type = data[15];
-
+        //console.log(data);
+        // console.log(type);
         var x = mercX(long) - cx;
         var y = mercY(lat) - cy;
-
         mag = pow(10, mag);
         mag = sqrt(mag);
 
         var magMax = sqrt(pow(10, 10));
         var d = map(mag, 0, magMax, 2, 500);
-        // console.log(type);
-        if (type === "explosion" || type === "quarry blast"
-          || type === "chemical" || type === "other event") {
+        if (type === "explosion" || type === "quarry blast" || type === "chemical" || type === "other event") {
           fill(255, 255, 255); //white
         } else if (type === "ice quake") {
           fill(0, 0, 255); //blue
         }
         else {
           if (depth <= 7) {
-            // } else if (depth > 4 && depth < 7) {
             fill(0, 255, 0, 50); //green
           } else if (depth > 7 && depth < 15) {
-            fill(255, 255, 0, 50);
+            fill(255, 255, 0, 50); //yellow
           } else {
             fill(255, 0, 0, 100); //red
           }
@@ -83,7 +77,5 @@ function setup() {
     })(i);
     // console.log(slider.value)
   }
-
   document.getElementById("total").innerHTML = earthquakes.length;
-
 }

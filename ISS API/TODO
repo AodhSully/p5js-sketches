@@ -1,6 +1,10 @@
-get better map projection
-
 add traveled path indicator
-add number of people in space
 add altitude
 add speed
+CSS
+
+/*******DONE**********/
+
+add number of people in space
+get better map projection
+animate iss
