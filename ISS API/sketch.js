@@ -59,13 +59,16 @@ function getPeepNumber(data) {
 }
 
 function getNames(data) {
-  names = data.people[0].name;
-  crafts = data.people[0].craft;
-
-
-  var message = data.message;
-  console.log(name);
-  document.getElementById("table").innerHTML = name;
+  for (var i = 0; i < data.people.length; i++) {
+    names = data.people[i].name;
+    crafts = data.people[i].craft;
+    console.log(names);
+    document.getElementById("name").innerHTML = names;
+    document.getElementById("craft").innerHTML = crafts;
+  }
+  // do this
+  //https://www.w3schools.com/jsref/met_table_insertrow.asp
+  // var message = data.message;
   // document.getElementById("table").innerHTML = craft;
 }
 
@@ -92,11 +95,8 @@ function bgrnd() {
 function draw() {
   bgrnd();
   fill(255, 255, 0, x * 2);
-  stroke(255)
-  // text(name, 50, 50);
-  // text(craft, 50, 100);
+  stroke(255);
   ellipse(issX, issY, x / 2, x / 2);
-
   if (x > 50) {
     grow = -3;
   } else if (x < 3) {
