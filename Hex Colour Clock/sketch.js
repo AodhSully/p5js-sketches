@@ -25,14 +25,15 @@ function draw() {
     var h = Math.round(hs);
     var m = Math.round(ms);
     var s = Math.round(ss);
+    // console.log(h, s, m);
     // add a zero in front of numbers<10
     m = checkTime(m);
     s = checkTime(s);
     var bg = '#' + h + m + s;
     background(bg);
-    
+
     document.getElementById('time').innerHTML = h + ":" + m + ":" + s;
-    document.getElementById('hexColor').innerHTML = "#" + h + m + s;
+    document.getElementById('hexColor').innerHTML = "Hex color #" + h + m + s;
     t = setTimeout(function() {
       getTime()
     }, 500);
