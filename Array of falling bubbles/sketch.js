@@ -1,7 +1,3 @@
-// The Nature of Code
-// Daniel Shiffman
-// http://natureofcode.com
-
 let bubbles = [];
 
 function setup() {
@@ -21,5 +17,4 @@ function draw() {
       bubbles.splice(i, 1);
     }
   }
-
 }
