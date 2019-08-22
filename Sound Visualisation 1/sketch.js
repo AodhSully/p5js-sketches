@@ -1,8 +1,8 @@
-var song;
-var amp;
-var button;
+let song;
+let amp;
+let button;
 
-var graphHistory = [];
+let graphHistory = [];
 
 function toggleSong() {
   if (song.isPlaying()) {
@@ -30,7 +30,7 @@ function windowResized() {
 
 function draw() {
   background(0);
-  var vol = amp.getLevel();
+  let vol = amp.getLevel();
   graphHistory.push(vol);
   stroke(0, 255, 0);
   strokeWeight(2)
@@ -38,8 +38,8 @@ function draw() {
   push();
   beginShape();
 
-  for (var i = 0; i < graphHistory.length; i++) {
-    var y = map(graphHistory[i], 0, 1, height - 50, 0);
+  for (let i = 0; i < graphHistory.length; i++) {
+    let y = map(graphHistory[i], 0, 1, height - 50, 0);
     vertex(i, y);
   }
   endShape();
