@@ -1,3 +1,18 @@
-integrate dropdowns for voice select and sliders for pitch/mousePressed
 integrate wave shape visual when speaking
 stylepage
+
+
+******BUGS********************
+Illegal invocation: Function must be called on an object of type StorageArea
+    at content.js:21
+
+******************CSS*****************
+allign sliders and text box
+
+
+************DONE***************
+
+Uncaught TypeError: dropDown.changed is not a function --- use CDN not lib file
+box doesnt change color
+
+integrate dropdowns for voice select and sliders for pitch/mousePressed
