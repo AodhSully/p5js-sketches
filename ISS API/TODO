@@ -2,6 +2,7 @@ add traveled path indicator
 add altitude
 add speed
 CSS
+populate table with astros names from JSON
 
 /*******DONE**********/
 

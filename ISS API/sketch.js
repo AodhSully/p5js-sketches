@@ -1,47 +1,45 @@
-var bg;
+let bg;
 
-var issData = 'http://api.open-notify.org/iss-now.json'
-var issPeep = 'http://api.open-notify.org/astros.json'
-// var issPeep
-var cLat = 0;
-var cLong = 0;
-var lat = 0;
-var long = 0;
-var zoom = 1;
-var x = 0;
-var grow = 3;
+let issData = 'http://api.open-notify.org/iss-now.json'
+let issPeep = 'http://api.open-notify.org/astros.json'
 
-var issX = 0;
-var issY = 0;
-var name;
-var names;
-var craft;
-var crafts;
+let cLat = 0;
+let cLong = 0;
+let lat = 0;
+let long = 0;
+let zoom = 1;
+let x = 0;
+let grow = 3;
+
+let issX = 0;
+let issY = 0;
+
+let name;
+let names;
+let craft;
+let crafts;
 
 //translated coordinates
 function mercX(long) {
   long = radians(long);
-  var a = (256 / PI) * pow(2, zoom);
-  var b = long + PI;
+  let a = (256 / PI) * pow(2, zoom);
+  let b = long + PI;
   return a * b;
 }
 
 function mercY(lat) {
   lat = radians(lat);
-  var a = (256 / PI) * pow(2, zoom);
-  var b = tan(PI / 4 + lat / 2);
-  var c = PI - log(b)
+  let a = (256 / PI) * pow(2, zoom);
+  let b = tan(PI / 4 + lat / 2);
+  let c = PI - log(b)
   return a * c;
 }
 
-function setup() {
-  var canvas = createCanvas(1024, 512);
-  canvas.parent('sketch-holder');
-  bg = loadImage("images/map2.png");
-  var cx = mercX(cLong);
-  var cy = mercY(cLat);
-  setInterval(askIss, 1000);
-  setInterval(askIssPeep, 2000);
+function getData(data) {
+  let lat = data.iss_position.latitude;
+  let long = data.iss_position.longitude;
+  issX = (width / 360) * (180 + parseFloat(long));
+  issY = (height / 180) * (90 - lat);
 }
 
 function askIss() {
@@ -50,35 +48,18 @@ function askIss() {
 
 function askIssPeep() {
   loadJSON(issPeep, getPeepNumber);
-  loadJSON(issPeep, getNames);
+  // loadJSON(issPeep, getNames);
 }
 
 function getPeepNumber(data) {
-  var numPeeps = data.number;
+  let numPeeps = data.number;
   document.getElementById("people").innerHTML = numPeeps;
 }
 
-function getNames(data) {
-  for (var i = 0; i < data.people.length; i++) {
-    names = data.people[i].name;
-    crafts = data.people[i].craft;
-    console.log(names);
-    document.getElementById("name").innerHTML = names;
-    document.getElementById("craft").innerHTML = crafts;
-  }
-  // do this
-  //https://www.w3schools.com/jsref/met_table_insertrow.asp
-  // var message = data.message;
-  // document.getElementById("table").innerHTML = craft;
-}
-
-function getData(data) {
-  var lat = data.iss_position.latitude;
-  var long = data.iss_position.longitude;
-  // var people = data.number;
-  // var peep = people.toString()
-  issX = (width / 360) * (180 + parseFloat(long));
-  issY = (height / 180) * (90 - lat);
+function getAltitude(data) {
+  console.log(data.altitude);
+  let height = data.altitude;
+  document.getElementById("altitude").innerHTML = height;
 }
 
 function latLong() {
@@ -90,6 +71,22 @@ function latLong() {
 function bgrnd() {
   background(bg);
   image(bg, 0, 0);
+}
+
+function preload() {
+  // getPeepNumber(data);
+}
+
+function setup() {
+  let canvas = createCanvas(1024, 512);
+  canvas.parent('sketch-holder');
+  bg = loadImage("images/map2.png");
+  let cx = mercX(cLong);
+  let cy = mercY(cLat);
+  setInterval(askIss, 1000);
+  setInterval(askIssPeep, 2000);
+  // ellipse(issX, issY, x / 2, x / 2);
+  // stroke(255)
 }
 
 function draw() {

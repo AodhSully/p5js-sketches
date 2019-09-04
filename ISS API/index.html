@@ -1,27 +1,38 @@
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ISS Tracker</title>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.js"></script>
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/json2html/1.2.0/json2html.min.js"></script> -->
+  <script language="JavaScript" type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
   <script type="text/javascript" src="sketch.js"></script>
-  <!-- <script src="people"></script> -->
-  <link rel="stylesheet" type="text/css" href="style.css" </head> <body>
+  <script type="text/javascript" src="astros.js"></script>
+  <script type="text/javascript" src="spaceCrafts.js"></script>
+<script type="text/javascript" src="speed.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="style.css" />
+
+  </head>
+  <body>
   <p>
     There are currently <span id="people"></span> people in space
   </p>
+  <p>Altitude <span id="altitude"></span>:</p>
+  <p>Speed: <span id="speed"></span></p>
   <div id="sketch-holder"></div>
-
-  <div>
-    <table id="table">
-      <tr>
-        <th>Name</th>
-        <th>Craft</th>
-      </tr>
-      <tr>
-        <td id="name"></td>
-        <td id="craft"></td>
-      </tr>
-    </table>
+  <div id="info">
+    <div id="astroNames">
+      <h3>Names</h3>
+      <ul id="astroPeeps"></ul>
+    </div>
+    <div id="astroCraft">
+      <h3>Manned Space Craft</h3>
+      <ul id="crafts"></ul>
+    </div>
   </div>
   </body>
 
