@@ -9,22 +9,21 @@ function setup() {
   ma = atan(1 / sqrt(2));
   maxD = dist(0, 0, 150, 150);
 
+  cubeWidth = createSlider (0, 20, 2, 1);
+  cubeWidth.style('width', '100px');
+  cubeWidth.position(380, height -450);
+
   waveSize = createSlider(0.6, 2, 1, 0.1);
   waveSize.style('width', '100px');
-  waveSize.position(10, height-50);
-
-  zoom = createSlider(100, 1000, 500, 50);
-  zoom.style('width', '100px');
-  zoom.position(10, height-25);
+  waveSize.position(260, height -450);
 
   rotateZaxis = createSlider(0, 9.4, 0, 0.1);
   rotateZaxis.style('width', '100px');
-  rotateZaxis.position(10, height-75);
+  rotateZaxis.position(130, height -450);
 
-  cubeWidth = createSlider (0, 20, 2, 1);
-  cubeWidth.style('width', '100px');
-  cubeWidth.position(10, height-100);
-
+  zoom = createSlider(100, 1000, 500, 50);
+  zoom.style('width', '100px');
+  zoom.position(10, height -450);
 }
 
 function draw() {

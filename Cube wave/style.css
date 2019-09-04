@@ -1,0 +1,22 @@
+#text {
+  width: 100%;
+}
+
+#zoom {
+  float: left;
+}
+
+#rotate {
+  float: left;
+  margin-left: 85px;
+}
+
+#size{
+  float: left;
+  margin-left: 90px;
+}
+
+#width{
+  float: left;
+  margin-left: 50px;
+}
