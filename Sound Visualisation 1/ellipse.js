@@ -1,4 +1,4 @@
-//ellipse that moves to music
+//line that moves to music
 
 let song;
 let button
