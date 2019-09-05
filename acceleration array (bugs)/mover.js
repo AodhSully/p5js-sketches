@@ -19,9 +19,10 @@ class Mover{
   }
 
   display() {
-    stroke(0);
-    strokeWeight(2);
-    fill(127);
-    ellipse(this.position.x, this.position.y, 48, 48);
+    // stroke(0);
+    // strokeWeight(2);
+
+    ellipse(this.position.x, this.position.y, 8, 8);
+    fill(random(0, 255), 255, 0);
   }
 }
