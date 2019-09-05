@@ -1,0 +1,20 @@
+body {
+  margin:0;
+  padding:0;
+  overflow: hidden;
+}
+
+canvas {
+  margin:auto;
+}
+
+p {
+  float: left;
+}
+
+#adjust {
+  padding-left: 10px;
+}
+#chance {
+  padding-left: 85px;
+}
